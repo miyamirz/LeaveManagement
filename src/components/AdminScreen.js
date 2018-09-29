@@ -3,7 +3,7 @@ import Logout from './Logout';
 import {getLeaveRequests} from '../helpers/index';
 import PendingDashboard from './PendingDashboard';
 import ApprovedDashboard from './ApprovedDashboard';
-import 'styles/styles.css';
+import '../styles/styles.css';
 function LeaveDashboard(){
      const requests = getLeaveRequests();
   
