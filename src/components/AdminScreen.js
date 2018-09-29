@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Logout from './Logout';
-import {getLeaveRequests} from 'helpers/index';
+import {getLeaveRequests} from '../helpers/index';
 import PendingDashboard from './PendingDashboard';
 import ApprovedDashboard from './ApprovedDashboard';
 import 'styles/styles.css';
