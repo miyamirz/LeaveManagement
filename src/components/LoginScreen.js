@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Header from './Header';
-import 'styles/styles.css';
+import '../styles/styles.css';
 class LoginScreen extends Component{
     constructor(props){
         super(props);
