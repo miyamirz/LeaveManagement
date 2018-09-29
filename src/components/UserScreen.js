@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {getCurrentUser,addLeave} from 'helpers/index';
+import {getCurrentUser,addLeave} from '../helpers/index';
 import Logout from './Logout';
 
 function MyLeaves(props){
