@@ -43,7 +43,13 @@ class LoginScreen extends Component{
                   <input placeholder="Enter password" type="password" value={this.state.password}  onChange={(e)=>this.setState({password:e.target.value})}/>
                   <button className="btn btn-primary btn-sm btnLogin" type="submit">Login</button>
                 </form>
+             
             </div>
+            <div className="loginHint">
+              <label> Usernames: John,Bailey,Doe,Sam</label>
+              <label>Admin : Rob</label>
+              <label>Password : Same as usernames</label>
+             </div>   
             </div>
         )
     }
