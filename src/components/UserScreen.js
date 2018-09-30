@@ -58,17 +58,20 @@ class UserScreen extends Component{
             applyLeave:false
         }
         this.onApply=this.onApply.bind(this);
+        this.handleLogout=this.handleLogout.bind(this);
     }
     onApply(){
         this.setState({applyLeave:!this.state.applyLeave})
     }
-
+    handleLogout(){
+     this.props.handleLogout('user');
+    }
     render(){
         return(
             <div className="userOptions">
                 <button className="btn btn-primary" onClick={()=>{this.setState({showLeaves:!this.state.showLeaves,applyLeave:false})}}>My Leaves</button>
                 <button className="btn btn-primary" onClick={()=>{this.setState({showLeaves:false,applyLeave:!this.state.applyLeave})}}>New Leave</button>
-                <Logout handler={this.props.handleLogout}/>
+                <Logout handler={this.handleLogout}/>
                 {this.state.showLeaves?<MyLeaves {...this.props}/>:''}
                 {this.state.applyLeave?<NewLeave {...this.props} onApply={this.onApply}/>:''}
             </div>   
