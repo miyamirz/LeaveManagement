@@ -19,10 +19,15 @@ class App extends Component {
         this.setState({isUserLoggedIn:true,currentUser})
       
     }
-    handleLogout(){
+ handleLogout(type){
+        if(type==='admin')
+        {
+            localStorage.setItem('adminLastLogin',new Date().toLocaleString());   
+        }
 
         this.setState({isUserLoggedIn:false,currentUser:null});
         localStorage.removeItem('LoggedInAs');
+      
     }
     render() {
         return ( 
