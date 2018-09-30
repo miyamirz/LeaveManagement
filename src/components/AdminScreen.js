@@ -24,8 +24,16 @@ class AdminScreen extends Component{
             pendingVisibility:false,
             approvedVisibility:false
         }
-       
+       this.setLastLogin();
     }
+    setLastLogin(){
+        
+        if(localStorage.getItem('adminLastLogin') === "null")
+        {
+            debugger;
+            localStorage.setItem('adminLastLogin',new Date().toLocaleString());
+        }   
+}
     render(){
         return(
             <div className="adminOptions">
