@@ -25,7 +25,11 @@ class AdminScreen extends Component{
             approvedVisibility:false
         }
        this.setLastLogin();
-       this.handleLogout=this.handleLogout.bind(this);
+    }
+    componentDidMount(){
+        console.log("mounted");
+        localStorage.setItem('adminLastLogin',new Date().toLocaleString());
+
     }
     setLastLogin(){
         
@@ -36,9 +40,6 @@ class AdminScreen extends Component{
         }
      
     }
-    handleLogout(){
-        this.props.handleLogout('admin');
-       }
     render(){
         return(
             <div className="adminOptions">
@@ -46,7 +47,7 @@ class AdminScreen extends Component{
                 <button className="btn btn-primary" onClick={() => this.setState({homeVisibility:false,pendingVisibility:true,approvedVisibility:false})}>Pending Requests</button> 
                 <button className="btn btn-primary" onClick={() => this.setState({homeVisibility:false,pendingVisibility:false,approvedVisibility:true})}>Approved</button> 
                 <label className="lastLogin">Last Login : {localStorage.getItem('adminLastLogin')}</label>
-                <Logout handler={this.handleLogout}/>
+                <Logout handler={this.props.handleLogout}/>
                 {this.state.homeVisibility?<LeaveDashboard/>:''}
                 {this.state.pendingVisibility?<PendingDashboard data={this.setTableData}/>:''}
                 {this.state.approvedVisibility?<ApprovedDashboard/>:''} 
