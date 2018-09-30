@@ -11,6 +11,15 @@
     border-radius: 3px;
     border-color: black;
   }
+  .loginHint{
+    position: absolute;
+    top: 70%;
+    width: 25%;
+    left: 10%;
+    border-color: black;
+    border-radius: 1px;
+    border: thin dotted black;
+}
  form{
      position: absolute;
      top:20%;
