@@ -9,7 +9,8 @@ import reducers from './reducers';
 const store = createStore(reducers,usersData);
 
 localStorage.setItem('localData',JSON.stringify(usersData));
-localStorage.setItem('adminLastLogin',"null");
+if(!(localStorage.getItem('adminLastLogin')))
+   localStorage.setItem('adminLastLogin',"null");
 
 ReactDOM.render( <Provider store={store}>
                 < App/>
