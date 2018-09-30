@@ -25,23 +25,28 @@ class AdminScreen extends Component{
             approvedVisibility:false
         }
        this.setLastLogin();
+       this.handleLogout=this.handleLogout.bind(this);
     }
     setLastLogin(){
         
         if(localStorage.getItem('adminLastLogin') === "null")
         {
-            debugger;
+        
             localStorage.setItem('adminLastLogin',new Date().toLocaleString());
-        }   
-}
+        }
+     
+    }
+    handleLogout(){
+        this.props.handleLogout('admin');
+       }
     render(){
         return(
             <div className="adminOptions">
                 <button className="btn btn-primary" onClick={() => this.setState({homeVisibility:true,pendingVisibility:false,approvedVisibility:false})}>Dashboard</button> 
                 <button className="btn btn-primary" onClick={() => this.setState({homeVisibility:false,pendingVisibility:true,approvedVisibility:false})}>Pending Requests</button> 
                 <button className="btn btn-primary" onClick={() => this.setState({homeVisibility:false,pendingVisibility:false,approvedVisibility:true})}>Approved</button> 
-                <label className="lastLogin">Last Login : {localStorage.getItem('adminLastLogin')}</label>               
-                <Logout handler={this.props.handleLogout}/>
+                <label className="lastLogin">Last Login : {localStorage.getItem('adminLastLogin')}</label>
+                <Logout handler={this.handleLogout}/>
                 {this.state.homeVisibility?<LeaveDashboard/>:''}
                 {this.state.pendingVisibility?<PendingDashboard data={this.setTableData}/>:''}
                 {this.state.approvedVisibility?<ApprovedDashboard/>:''} 
