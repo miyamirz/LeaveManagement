@@ -5,19 +5,17 @@ export function getCurrentUser(props){
 }
 export function addLeave(reason){
   var currentUser = localStorage.getItem('LoggedInAs');
-  var localUsers=(JSON.parse(localStorage.getItem('localData'))).usersList;
-  var newObj={usersList:[]};
-  for(let i =0 ;i<localUsers.length;i++){
-      if(localUsers[i].name === currentUser){
-          localUsers[i].leaves.push({reason:reason,status:'Pending'});   
-          newObj.usersList.push(localUsers[i]);
-          
-      } 
-      else
-      {
-       newObj.usersList.push(localUsers[i]);
-      }
-  }
+  var localObj=(JSON.parse(localStorage.getItem('localData')))
+  var localUsers=localObj.usersList;
+
+  var newArr =localUsers.map(obj=>{ if(obj.name===currentUser){
+                    obj.leaves.push({reason:reason,status:"Approved"});
+                    return obj;
+                    }
+                    else{ 
+                        return obj
+                        }});
+  var newObj = {...localObj,usersList:newArr};
   console.log(newObj);
   localStorage.setItem('localData',JSON.stringify(newObj));
 
