@@ -3,7 +3,6 @@ export const usersData ={
         name:"John",
         password:"John",
         type:"user",
-        numberOfLeaves:2,
         leaves:[{reason:'Heavy Rain',status:'Pending'},{reason:'Gamers Day',status:'Pending'},{reason:'Sports Day',status:'Pending'},
         {reason:'Fever',status:'Approved'} 
                ],
@@ -13,7 +12,6 @@ export const usersData ={
         name:"Sam",
         password:"Sam",
         type:"user",
-        numberOfLeaves:0,
         leaves:[{reason:'Heavy Rain',status:'Pending'},{reason:'sports day',status:'Pending'},{reason:'Hackathon',status:'Pending'},
         {reason:'headache',status:'Approved'} 
                ],
@@ -23,7 +21,6 @@ export const usersData ={
         name:"Doe",
         password:"Doe",
         type:"user",
-        numberOfLeaves:0,
         leaves:[{reason:'Heavy Rain',status:'Pending'},{reason:'Going to hometown',status:'Pending'},{reason:'vacation',status:'Pending'},
         {reason:'cold',status:'Approved'},
         {reason:'not feeling well',status:'Approved'},
@@ -35,7 +32,6 @@ export const usersData ={
         name:"Bailey",
         password:"Bailey",
         type:"user",
-        numberOfLeaves:0,
         leaves:[{reason:'Going Out',status:'Pending'},{reason:'Shopping',status:'Pending'},{reason:'Heavy Rain',status:'Pending'},
         {reason:'not feeling well',status:'Approved'},
         {reason:'going for an outing',status:'Approved'} 
