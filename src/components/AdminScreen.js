@@ -40,6 +40,7 @@ class AdminScreen extends Component{
                 <button className="btn btn-primary" onClick={() => this.setState({homeVisibility:true,pendingVisibility:false,approvedVisibility:false})}>Dashboard</button> 
                 <button className="btn btn-primary" onClick={() => this.setState({homeVisibility:false,pendingVisibility:true,approvedVisibility:false})}>Pending Requests</button> 
                 <button className="btn btn-primary" onClick={() => this.setState({homeVisibility:false,pendingVisibility:false,approvedVisibility:true})}>Approved</button> 
+                <label className="lastLogin">Last Login : {localStorage.getItem('adminLastLogin')}</label>               
                 <Logout handler={this.props.handleLogout}/>
                 {this.state.homeVisibility?<LeaveDashboard/>:''}
                 {this.state.pendingVisibility?<PendingDashboard data={this.setTableData}/>:''}
