@@ -27,7 +27,6 @@ class LoginScreen extends Component{
          if(currentUser!==null)
          {
             localStorage.setItem('LoggedInAs',currentUser.name)
-            localStorage.setItem('LastLogin',new Date().toLocaleString());
             this.props.handleSubmit(currentUser);
          }
          else{
